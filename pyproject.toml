@@ -1,0 +1,31 @@
+[project]
+name = "autoresearcher"
+version = "0.1.0"
+description = "Multi-agent autonomous research & report generation system (Planner-Executor-Critic) built with LangGraph"
+requires-python = ">=3.10"
+dependencies = [
+    "langgraph>=0.2.0",
+    "langchain>=0.3.0",
+    "langchain-groq>=0.2.0",
+    "langchain-community>=0.3.0",
+    "groq>=0.11.0",
+    "duckduckgo-search>=6.0.0",
+    "beautifulsoup4>=4.12.0",
+    "requests>=2.32.0",
+    "faiss-cpu>=1.8.0",
+    "sentence-transformers>=3.0.0",
+    "fastapi>=0.115.0",
+    "uvicorn>=0.30.0",
+    "streamlit>=1.38.0",
+    "pydantic>=2.9.0",
+    "python-dotenv>=1.0.0",
+    "tenacity>=9.0.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["agents", "tools"]
+py_modules = ["main", "streamlit_app"]
